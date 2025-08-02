@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 20% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -17,26 +17,39 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 262 80% 60%;
     --primary-foreground: 210 40% 98%;
+    --primary-glow: 262 90% 75%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 220 15% 95%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 220 15% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 262 80% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --tech-blue: 217 92% 60%;
+    --tech-blue-dark: 217 92% 45%;
+    --tech-purple: 262 80% 60%;
+    --tech-purple-dark: 262 80% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 80% 60%;
 
-    --radius: 0.5rem;
+    --gradient-primary: linear-gradient(135deg, hsl(var(--tech-blue)), hsl(var(--tech-purple)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--primary-glow)), hsl(var(--tech-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--tech-blue) / 0.1), hsl(var(--tech-purple) / 0.1));
+    
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +114,14 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }
