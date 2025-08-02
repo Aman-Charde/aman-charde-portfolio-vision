@@ -22,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="py-20 bg-muted/30 dark:bg-muted/10 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold font-poppins mb-4">
@@ -36,7 +36,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Career Objective */}
           <div className="space-y-8 animate-fade-in">
-            <Card className="shadow-elegant hover:shadow-glow transition-shadow duration-300">
+            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300 border-border/20 bg-card/80 dark:bg-card/40 backdrop-blur-sm">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Target className="w-6 h-6 text-primary" />
@@ -50,7 +50,7 @@ const About = () => {
             </Card>
 
             {/* Personal Information */}
-            <Card className="shadow-elegant hover:shadow-glow transition-shadow duration-300">
+            <Card className="shadow-elegant hover:shadow-glow transition-all duration-300 border-border/20 bg-card/80 dark:bg-card/40 backdrop-blur-sm">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <User className="w-6 h-6 text-primary" />

@@ -11,40 +11,51 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="absolute top-20 left-10 w-32 h-32 bg-tech-blue/10 rounded-full blur-xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-48 h-48 bg-tech-purple/10 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 bg-gradient-hero transition-colors duration-300"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="text-center lg:text-left space-y-6 animate-fade-in-up">
-            <div className="space-y-2">
-              <p className="text-tech-blue font-medium font-inter tracking-wide uppercase text-sm">
-                Computer Science Student
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-poppins leading-tight">
+      {/* Floating Background Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-tech-blue/10 dark:bg-tech-blue/5 rounded-full blur-xl animate-float"></div>
+      <div className="absolute bottom-20 right-10 w-48 h-48 bg-tech-purple/10 dark:bg-tech-purple/5 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-primary/5 rounded-full blur-lg animate-float" style={{ animationDelay: '2s' }}></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          {/* Content - Left Side */}
+          <div className="text-center lg:text-left space-y-8 animate-fade-in-up">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/5 border border-primary/20">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                <p className="text-primary font-medium font-inter tracking-wide text-sm">
+                  Computer Science Student
+                </p>
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-poppins leading-tight">
                 Hi, I'm{' '}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                <span className="bg-gradient-primary bg-clip-text text-transparent inline-block">
                   Aman Charde
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground font-inter max-w-lg mx-auto lg:mx-0">
-                Passionate about creating innovative solutions through code and technology
-              </p>
+              <div className="space-y-3">
+                <p className="text-xl sm:text-2xl text-muted-foreground font-inter max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                  Passionate about creating innovative solutions through{' '}
+                  <span className="text-primary font-semibold">code</span> and{' '}
+                  <span className="text-primary font-semibold">technology</span>
+                </p>
+              </div>
             </div>
 
             {/* Location & Contact */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-1">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card/50 dark:bg-card/20 border border-border/20">
                 <MapPin className="w-4 h-4 text-tech-blue" />
-                <span>Indore, Madhya Pradesh</span>
+                <span className="text-muted-foreground">Indore, Madhya Pradesh</span>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card/50 dark:bg-card/20 border border-border/20">
                 <Mail className="w-4 h-4 text-tech-purple" />
-                <span>amancharde8989@gmail.com</span>
+                <span className="text-muted-foreground">Available for opportunities</span>
               </div>
             </div>
 
@@ -52,7 +63,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
                 size="lg" 
-                className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-medium shadow-glow"
+                className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-medium shadow-glow hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 onClick={() => scrollToSection('projects')}
               >
                 View My Work
@@ -60,7 +71,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-primary/20 hover:bg-primary/10"
+                className="border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 backdrop-blur-sm"
                 onClick={() => scrollToSection('contact')}
               >
                 Get In Touch
@@ -73,7 +84,7 @@ const Hero = () => {
                 href="https://github.com/Aman-Charde" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors duration-200 group shadow-elegant"
+                className="p-3 rounded-full bg-card/80 dark:bg-card/20 hover:bg-primary/10 border border-border/20 hover:border-primary/40 transition-all duration-300 group shadow-elegant hover:shadow-glow"
               >
                 <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
@@ -81,32 +92,44 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/aman-charde-727303258/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors duration-200 group shadow-elegant"
+                className="p-3 rounded-full bg-card/80 dark:bg-card/20 hover:bg-primary/10 border border-border/20 hover:border-primary/40 transition-all duration-300 group shadow-elegant hover:shadow-glow"
               >
                 <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
               <a 
                 href="mailto:amancharde8989@gmail.com"
-                className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors duration-200 group shadow-elegant"
+                className="p-3 rounded-full bg-card/80 dark:bg-card/20 hover:bg-primary/10 border border-border/20 hover:border-primary/40 transition-all duration-300 group shadow-elegant hover:shadow-glow"
               >
                 <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
             </div>
           </div>
 
-          {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-slide-in-right">
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full overflow-hidden shadow-glow border-4 border-primary/20">
-                <img 
-                  src={heroImage} 
-                  alt="Aman Charde" 
-                  className="w-full h-full object-cover object-center"
-                />
+          {/* Profile Image - Right Side */}
+          <div className="flex justify-center lg:justify-end animate-slide-in-right order-first lg:order-last">
+            <div className="relative group">
+              {/* Main Image Container */}
+              <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-glow border-4 border-primary/20 dark:border-primary/10 bg-gradient-primary p-1">
+                <div className="w-full h-full rounded-2xl overflow-hidden bg-background dark:bg-card">
+                  <img 
+                    src={heroImage} 
+                    alt="Aman Charde - Computer Science Student" 
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
               </div>
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-tech-blue/20 rounded-full animate-glow-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-tech-purple/20 rounded-full animate-glow-pulse" style={{ animationDelay: '1s' }}></div>
+              
+              {/* Floating Decorative Elements */}
+              <div className="absolute -top-6 -right-6 w-16 h-16 bg-tech-blue/20 dark:bg-tech-blue/10 rounded-2xl animate-glow-pulse backdrop-blur-sm border border-tech-blue/30"></div>
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-tech-purple/20 dark:bg-tech-purple/10 rounded-xl animate-glow-pulse backdrop-blur-sm border border-tech-purple/30" style={{ animationDelay: '1s' }}></div>
+              
+              {/* Status Badge */}
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-background dark:bg-card border border-border/20 rounded-full px-4 py-2 shadow-elegant">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-muted-foreground">Available for work</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

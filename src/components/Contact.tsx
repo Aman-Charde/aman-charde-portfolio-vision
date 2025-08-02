@@ -60,7 +60,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
+    <section id="contact" className="py-20 bg-muted/30 dark:bg-muted/10 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold font-poppins mb-4">
