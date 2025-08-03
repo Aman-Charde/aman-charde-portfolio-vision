@@ -97,13 +97,19 @@ const Navigation = () => {
           {/* Right Side Actions */}
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
-            <Button 
+            {/* <Button 
               variant="outline" 
-              className="border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 group"
-            >
+              className="border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 group">
               <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
               Resume
-            </Button>
+            </Button> */}
+            <a href="/resume.pdf" 
+            download 
+            className="border border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 group rounded-md px-4 py-2 flex items-center text-sm">
+            <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+            Resume
+            </a>
+
           </div>
 
           {/* Mobile menu button */}
@@ -137,13 +143,13 @@ const Navigation = () => {
                 </button>
               ))}
               <div className="pt-2 border-t border-border/20">
-                <Button 
-                  variant="outline" 
-                  className="w-full border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300"
-                >
+                <a 
+                  href="/resume.pdf" 
+                  download 
+                  className="w-full flex items-center justify-center border border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 rounded-md px-4 py-2 text-sm">
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume
-                </Button>
+                </a>
               </div>
             </div>
           </div>

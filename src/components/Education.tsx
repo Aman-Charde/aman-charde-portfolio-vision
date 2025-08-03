@@ -19,7 +19,7 @@ const Education = () => {
       institution: 'RD Public School',
       university: 'CBSE',
       duration: '2022',
-      grade: '72.8%',
+      grade: '79%',
       status: 'Completed',
       icon: Award,
       color: 'tech-purple'
@@ -29,7 +29,7 @@ const Education = () => {
       institution: 'RD Public School',
       university: 'CBSE',
       duration: '2020',
-      grade: '79%',
+      grade: '72.3%',
       status: 'Completed',
       icon: Award,
       color: 'primary'
@@ -50,8 +50,8 @@ const Education = () => {
       organization: 'IIT'
     },
     {
-      name: 'AWS Academy Graduate',
-      provider: 'AWS Academy',
+      name: 'AWS Academy Cloud Foundations',
+      provider: 'AWS Academy Graduate',
       specialization: 'Cloud Foundations',
       organization: 'Amazon Web Services'
     }

@@ -39,24 +39,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="text-center">
-            <h4 className="font-semibold font-poppins mb-4">Quick Links</h4>
-            <div className="space-y-2">
-              {['About', 'Education', 'Skills', 'Projects', 'Contact'].map((link) => (
-                <button
-                  key={link}
-                  onClick={() => {
-                    const element = document.getElementById(link.toLowerCase());
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="block mx-auto text-muted-foreground hover:text-primary transition-colors font-inter"
-                >
-                  {link}
-                </button>
-              ))}
-            </div>
-          </div>
+          
 
           {/* Social Links */}
           <div className="text-center md:text-right">
@@ -80,18 +63,9 @@ const Footer = () => {
 
         <div className="border-t border-border/20 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground font-inter text-sm">
-              © {currentYear} Aman Charde. All rights reserved.
-            </p>
-            <div className="flex items-center gap-1 text-muted-foreground font-inter text-sm">
-              <span>Made with</span>
-              <Heart className="w-4 h-4 text-red-500 fill-current" />
-              <span>using React & TypeScript</span>
-            </div>
             <button
               onClick={scrollToTop}
-              className="text-primary hover:text-primary/80 transition-colors font-inter text-sm"
-            >
+              className="text-primary hover:text-primary/80 transition-colors font-inter text-sm">
               Back to top ↑
             </button>
           </div>

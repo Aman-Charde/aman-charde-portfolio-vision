@@ -2,6 +2,10 @@ import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, MapPin, ArrowDown } from 'lucide-react';
 import heroImage from '@/assets/aman-hero.jpg';
 
+import lightImage from '@/assets/aman-light.png';
+import darkImage from '@/assets/aman-dark.png';
+
+
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -111,11 +115,22 @@ const Hero = () => {
               {/* Main Image Container */}
               <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-glow border-4 border-primary/20 dark:border-primary/10 bg-gradient-primary p-1">
                 <div className="w-full h-full rounded-2xl overflow-hidden bg-background dark:bg-card">
-                  <img 
-                    src={heroImage} 
-                    alt="Aman Charde - Computer Science Student" 
-                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                  />
+                  <>
+                  {/* Light Mode Image */}
+                    <img
+                      src={lightImage}
+                      alt="Aman Charde - Light Mode"
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 dark:hidden"
+                    />
+
+                    {/* Dark Mode Image */}
+                    <img
+                      src={darkImage}
+                      alt="Aman Charde - Dark Mode"
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 hidden dark:block"
+                    />
+                  </>
+
                 </div>
               </div>
               

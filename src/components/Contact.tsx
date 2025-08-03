@@ -3,8 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Github, Linkedin, Send, Download, User } from 'lucide-react';
+import React, { useState } from 'react';
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const contactInfo = [
     {
       icon: Mail,
@@ -59,6 +62,31 @@ const Contact = () => {
     }
   ];
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    const response = await fetch('https://formspree.io/f/movlnkpy', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+      },
+      body: formData,
+    });
+    
+
+    if (response.ok) {
+      alert("✅ Message sent successfully!");
+      e.currentTarget.reset();
+    } else {
+      alert("❌ Failed to send message.");
+    }
+
+    setIsSubmitting(false);
+  };
+
   return (
     <section id="contact" className="py-20 bg-muted/30 dark:bg-muted/10 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,9 +100,7 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Information */}
           <div className="lg:col-span-1 space-y-8 animate-fade-in">
-            {/* Contact Details */}
             <Card className="shadow-elegant hover:shadow-glow transition-shadow duration-300">
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold font-poppins mb-6">Contact Information</h3>
@@ -98,7 +124,6 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Social Links */}
             <Card className="shadow-elegant hover:shadow-glow transition-shadow duration-300">
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold font-poppins mb-6">Follow Me</h3>
@@ -118,76 +143,54 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Download Resume */}
             <Card className="shadow-elegant hover:shadow-glow transition-shadow duration-300">
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold font-poppins mb-4">Resume</h3>
                 <p className="text-muted-foreground font-inter mb-6">
                   Download my complete resume for detailed information about my experience and skills.
                 </p>
-                <Button 
-                  className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-glow"
-                  size="lg"
-                >
-                  <Download className="w-4 h-4 mr-2" />
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md text-sm font-medium bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-glow transition-all duration-300">
+                  <Download className="w-4 h-4" />
                   Download Resume
-                </Button>
+                </a>
               </CardContent>
             </Card>
           </div>
 
-          {/* Contact Form & References */}
           <div className="lg:col-span-2 space-y-8 animate-slide-in-right">
-            {/* Contact Form */}
             <Card className="shadow-elegant hover:shadow-glow transition-shadow duration-300">
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold font-poppins mb-6">Send me a message</h3>
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="text-sm font-medium font-inter mb-2 block">Name</label>
-                      <Input 
-                        placeholder="Your full name" 
-                        className="border-border/20 focus:border-primary"
-                      />
+                      <Input name="name" placeholder="Your full name" required />
                     </div>
                     <div>
                       <label className="text-sm font-medium font-inter mb-2 block">Email</label>
-                      <Input 
-                        type="email" 
-                        placeholder="your.email@example.com" 
-                        className="border-border/20 focus:border-primary"
-                      />
+                      <Input type="email" name="email" placeholder="your.email@example.com" required />
                     </div>
                   </div>
                   <div>
                     <label className="text-sm font-medium font-inter mb-2 block">Subject</label>
-                    <Input 
-                      placeholder="What's this about?" 
-                      className="border-border/20 focus:border-primary"
-                    />
+                    <Input name="subject" placeholder="What's this about?" required />
                   </div>
                   <div>
                     <label className="text-sm font-medium font-inter mb-2 block">Message</label>
-                    <Textarea 
-                      placeholder="Tell me about your project or opportunity..." 
-                      rows={6}
-                      className="border-border/20 focus:border-primary resize-none"
-                    />
+                    <Textarea name="message" rows={6} placeholder="Tell me about your project or opportunity..." required />
                   </div>
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-glow"
-                  >
+                  <Button type="submit" disabled={isSubmitting} size="lg" className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-glow">
                     <Send className="w-4 h-4 mr-2" />
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
             </Card>
 
-            {/* References */}
             <Card className="shadow-elegant hover:shadow-glow transition-shadow duration-300">
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold font-poppins mb-6">Professional References</h3>
@@ -202,10 +205,7 @@ const Contact = () => {
                           <h4 className="font-semibold font-poppins">{reference.name}</h4>
                           <p className="text-sm text-muted-foreground font-inter">{reference.title}</p>
                           <p className="text-sm text-muted-foreground font-inter">{reference.organization}</p>
-                          <a 
-                            href={`mailto:${reference.email}`}
-                            className="text-sm text-primary hover:text-primary/80 font-inter mt-1 inline-block"
-                          >
+                          <a href={`mailto:${reference.email}`} className="text-sm text-primary hover:text-primary/80 font-inter mt-1 inline-block">
                             {reference.email}
                           </a>
                         </div>

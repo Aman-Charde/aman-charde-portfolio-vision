@@ -28,7 +28,7 @@ const Skills = () => {
       icon: Server,
       color: 'primary',
       skills: [
-        { name: 'Node.js', level: 75, description: 'Server-side JavaScript and APIs' },
+        { name: 'Node.js', level: 90, description: 'Server-side JavaScript and APIs' },
         { name: 'Express.js', level: 80, description: 'RESTful APIs and middleware' }
       ]
     },
