@@ -1,6 +1,6 @@
 # 🚀 My Portfolio Website
 
-🔗 **Live Now:** [Checkout My Portfolio]([https://your-portfolio-link.com](https://aman-charde-portfolio-vision.vercel.app/))
+🔗 **Live Now:** [Checkout My Portfolio](https://aman-charde-portfolio-vision.vercel.app/)
 
 This is my personal portfolio website where I showcase my projects, skills, resume, and contact details — all in one place.
 
