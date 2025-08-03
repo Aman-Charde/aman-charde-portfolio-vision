@@ -9,7 +9,7 @@ const Education = () => {
       institution: 'Acropolis Institute of Technology and Research, Indore',
       university: 'RGTU Bhopal',
       duration: '2022 – 2026',
-      grade: '74.4%',
+      grade: '75.5%',
       status: 'Currently Pursuing',
       icon: GraduationCap,
       color: 'tech-blue'
