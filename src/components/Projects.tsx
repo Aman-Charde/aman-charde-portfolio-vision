@@ -9,7 +9,7 @@ const Projects = () => {
       title: 'Sanjeevani',
       subtitle: 'AI-Powered Drug Repurposing System',
       role: 'Full Stack Developer',
-      duration: '—',
+      duration: '3 Months',
       organization: 'Personal Project',
       description:
         'A production-ready agentic AI system for pharmaceutical R&D that autonomously analyzes clinical data, patents, market insights, and scientific literature to generate drug repurposing insights and executive reports.',
@@ -38,13 +38,14 @@ const Projects = () => {
       ],
       type: 'Full Stack',
       status: 'Completed',
+      github: 'https://github.com/Aman-Charde/Sanjeevani-Drug-Repurposing',
       liveDemo: 'https://sanjeevani-drug-repurposing.vercel.app'
     },
     {
       title: 'CareerBoat',
       subtitle: 'AI-Powered Career Guidance System',
       role: 'Full Stack Developer',
-      duration: '—',
+      duration: '3 Months',
       organization: 'Personal Project',
       description:
         'An AI-powered career guidance platform that provides personalized career pathways, recommendations, and progress tracking through an interactive and responsive user dashboard.',
@@ -72,7 +73,8 @@ const Projects = () => {
       ],
       type: 'Full Stack',
       status: 'Completed',
-      liveDemo: 'https://careerboat.netlify.app'
+      github: 'https://github.com/Aman-Charde/AI-Career-Guidance',
+      liveDemo: 'https://careerboat.netlify.app/'
     }
   ];
 
@@ -206,7 +208,7 @@ const Projects = () => {
                       <Button
                         variant="outline"
                         className="w-full border-primary/20 hover:bg-primary/10"
-                        disabled
+                        onClick={() => window.open(project.github, '_blank')}
                       >
                         <Github className="w-4 h-4 mr-2" />
                         View Code
@@ -214,13 +216,13 @@ const Projects = () => {
                       <Button
                         variant="outline"
                         className="w-full border-primary/20 hover:bg-primary/10"
-                        disabled
+                        onClick={() => window.open(project.liveDemo, '_blank')}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
                       </Button>
                       <p className="text-xs text-muted-foreground text-center font-inter">
-                        Repository access available upon request
+                        Click to explore the project
                       </p>
                     </div>
                   </div>
