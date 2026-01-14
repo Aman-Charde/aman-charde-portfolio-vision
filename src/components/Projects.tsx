@@ -6,56 +6,76 @@ import { ExternalLink, Github, Calendar, User, Building, Clock } from 'lucide-re
 const Projects = () => {
   const projects = [
     {
-      title: 'Swasth Bazaar',
-      subtitle: 'Trusted Supply Chain for Street Food Vendors',
-      role: 'Backend Developer',
-      duration: '3 Months',
+      title: 'Sanjeevani',
+      subtitle: 'AI-Powered Drug Repurposing System',
+      role: 'Full Stack Developer',
+      duration: '—',
       organization: 'Personal Project',
-      description: 'A comprehensive digital platform that connects street food vendors with verified suppliers. The system includes AI-powered price predictions, multilingual support for accessibility, and a community review system to ensure quality and trust.',
+      description:
+        'A production-ready agentic AI system for pharmaceutical R&D that autonomously analyzes clinical data, patents, market insights, and scientific literature to generate drug repurposing insights and executive reports.',
       features: [
-        'AI-powered price prediction system',
-        'Multilingual support for vendors',
-        'Community review and rating system',
-        'Verified supplier network',
-        'Real-time inventory management',
-        'Digital payment integration'
+        'Agentic AI system for drug repurposing',
+        'Autonomous analysis of clinical and research data',
+        'Patent and scientific literature analysis',
+        'Market insight extraction',
+        'Executive report generation',
+        'Multi-agent Master–Worker architecture'
       ],
-      technologies: ['Node.js', 'Express.js', 'MongoDB', 'Machine Learning', 'RESTful APIs'],
+      technologies: [
+        'MongoDB',
+        'Express.js',
+        'React.js',
+        'Node.js',
+        'LangChain',
+        'RAG Agents',
+        'GitHub'
+      ],
       highlights: [
-        'Implemented secure authentication system',
-        'Designed scalable database architecture',
-        'Built AI model for price predictions',
-        'Created comprehensive API documentation'
+        'Designed Master–Worker multi-agent architecture',
+        'Implemented RAG-based intelligent agents',
+        'Built scalable MERN-based backend and frontend',
+        'Generated automated executive-level insights'
       ],
       type: 'Full Stack',
-      status: 'Completed'
+      status: 'Completed',
+      liveDemo: 'https://sanjeevani-drug-repurposing.vercel.app'
     },
     {
-      title: 'Parking Management System',
-      subtitle: 'Smart Parking Solution with Real-time Monitoring',
-      role: 'Frontend Developer',
-      duration: '25 Days (120 hours)',
-      organization: 'Acropolis Institute of Technology and Research',
-      description: 'An automated parking management system that provides real-time monitoring of parking spaces, digital payment processing, and user-friendly interface for both administrators and customers.',
+      title: 'CareerBoat',
+      subtitle: 'AI-Powered Career Guidance System',
+      role: 'Full Stack Developer',
+      duration: '—',
+      organization: 'Personal Project',
+      description:
+        'An AI-powered career guidance platform that provides personalized career pathways, recommendations, and progress tracking through an interactive and responsive user dashboard.',
       features: [
-        'Real-time parking space monitoring',
-        'Digital payment integration',
-        'User registration and authentication',
-        'Admin dashboard for management',
-        'Automated entry/exit system',
-        'Mobile-responsive design'
+        'Personalized career pathway recommendations',
+        'AI-driven career guidance',
+        'User authentication and authorization',
+        'Progress tracking dashboard',
+        'Responsive and modern UI/UX',
+        'Scalable deployment for real-time use'
       ],
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Local Storage', 'Responsive Design'],
+      technologies: [
+        'MongoDB',
+        'Express.js',
+        'React.js',
+        'Node.js',
+        'Tailwind CSS',
+        'GitHub'
+      ],
       highlights: [
-        'Designed intuitive user interface',
-        'Implemented responsive design',
-        'Created interactive dashboard',
-        'Optimized for mobile devices'
+        'Integrated secure authentication system',
+        'Designed responsive UI using Tailwind CSS',
+        'Built user dashboards with progress tracking',
+        'Deployed application for scalability and real-time use'
       ],
-      type: 'Frontend',
-      status: 'Completed'
+      type: 'Full Stack',
+      status: 'Completed',
+      liveDemo: 'https://careerboat.netlify.app'
     }
   ];
+
 
   return (
     <section id="projects" className="py-20 transition-colors duration-300">
@@ -71,8 +91,8 @@ const Projects = () => {
 
         <div className="space-y-12">
           {projects.map((project, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="shadow-elegant hover:shadow-glow transition-all duration-300 animate-fade-in overflow-hidden"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
@@ -85,14 +105,14 @@ const Projects = () => {
                         <CardTitle className="text-2xl font-poppins mb-2">{project.title}</CardTitle>
                         <p className="text-lg text-muted-foreground font-inter">{project.subtitle}</p>
                       </div>
-                      <Badge 
-                        variant="outline" 
+                      <Badge
+                        variant="outline"
                         className="border-primary/20 text-primary bg-primary/10"
                       >
                         {project.type}
                       </Badge>
                     </div>
-                    
+
                     {/* Project Metadata */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
                       <div className="flex items-center gap-2">
@@ -136,9 +156,9 @@ const Projects = () => {
                       <h4 className="font-semibold font-poppins mb-3">Technologies Used:</h4>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech, techIndex) => (
-                          <Badge 
-                            key={techIndex} 
-                            variant="secondary" 
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
                             className="bg-muted/50 text-foreground font-inter"
                           >
                             {tech}
@@ -173,7 +193,7 @@ const Projects = () => {
                     {/* Status */}
                     <div>
                       <h4 className="font-semibold font-poppins mb-2">Status</h4>
-                      <Badge 
+                      <Badge
                         variant={project.status === 'Completed' ? 'default' : 'secondary'}
                         className="font-inter"
                       >
@@ -183,16 +203,16 @@ const Projects = () => {
 
                     {/* Action Buttons */}
                     <div className="space-y-3 pt-4">
-                      <Button 
-                        variant="outline" 
+                      <Button
+                        variant="outline"
                         className="w-full border-primary/20 hover:bg-primary/10"
                         disabled
                       >
                         <Github className="w-4 h-4 mr-2" />
                         View Code
                       </Button>
-                      <Button 
-                        variant="outline" 
+                      <Button
+                        variant="outline"
                         className="w-full border-primary/20 hover:bg-primary/10"
                         disabled
                       >
@@ -220,8 +240,8 @@ const Projects = () => {
               <p className="text-muted-foreground font-inter mb-6">
                 I'm always excited to discuss new opportunities and collaborate on innovative projects.
               </p>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-glow"
                 onClick={() => {
                   const element = document.getElementById('contact');

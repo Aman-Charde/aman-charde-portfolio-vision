@@ -38,10 +38,10 @@ const Education = () => {
 
   const certifications = [
     {
-      name: 'TechSaksham Certification Program',
-      provider: 'Microsoft & SAP',
-      specialization: 'MERN Development',
-      organization: 'Edunate Foundation'
+      name: 'AWS Academy Cloud Practitioner',
+      provider: 'AWS Academy Graduate',
+      specialization: 'Cloud',
+      organization: 'Amazon Web Services'
     },
     {
       name: 'NPTEL Certification',
@@ -50,10 +50,10 @@ const Education = () => {
       organization: 'IIT'
     },
     {
-      name: 'AWS Academy Cloud Practitioner',
-      provider: 'AWS Academy Graduate',
-      specialization: 'Cloud',
-      organization: 'Amazon Web Services'
+      name: 'TechSaksham Certification Program',
+      provider: 'Microsoft & SAP',
+      specialization: 'MERN Development',
+      organization: 'Edunate Foundation'
     }
   ];
 
