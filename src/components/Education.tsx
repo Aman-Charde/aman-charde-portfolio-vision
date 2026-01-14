@@ -50,9 +50,9 @@ const Education = () => {
       organization: 'IIT'
     },
     {
-      name: 'AWS Academy Cloud Foundations',
+      name: 'AWS Academy Cloud Practitioner',
       provider: 'AWS Academy Graduate',
-      specialization: 'Cloud Foundations',
+      specialization: 'Cloud',
       organization: 'Amazon Web Services'
     }
   ];

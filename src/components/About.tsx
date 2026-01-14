@@ -11,7 +11,7 @@ const About = () => {
 
   const strengths = [
     'Logical Thinking',
-    'Quick Learner', 
+    'Quick Learner',
     'Active Listening',
     'Overcoming Nervousness'
   ];
@@ -43,7 +43,7 @@ const About = () => {
                   <h3 className="text-xl font-semibold font-poppins">Career Objective</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed font-inter">
-                  Use my technical skills and knowledge in software development to contribute to 
+                  Use my technical skills and knowledge in software development to contribute to
                   innovative projects, while continuously growing and learning new technologies.
                 </p>
               </CardContent>
@@ -81,9 +81,9 @@ const About = () => {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {strengths.map((strength, index) => (
-                    <Badge 
-                      key={index} 
-                      variant="secondary" 
+                    <Badge
+                      key={index}
+                      variant="secondary"
                       className="bg-primary/10 text-primary hover:bg-primary/20 font-inter"
                     >
                       {strength}
